@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="style.css" />
 
     <script>
+      ;(function () {
+        var BLOCKED_TID = "3e97ba7e373241eba9509b744d823ece"
+        var params = new URLSearchParams(window.location.search)
+        if (params.get("tid") === BLOCKED_TID) {
+          window.location.replace("404.html")
+        }
+      })()
+    </script>
+
+    <script>
       !(function (w) {
         if (w.arohaa) return
         var a = function () {

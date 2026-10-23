@@ -1,0 +1,136 @@
+:root {
+  --blue: #0047ab;
+  --blue-deep: #00327a;
+  --blue-soft: #e8f0fb;
+  --gold: #f2a93b;
+  --ink: #1a2433;
+  --muted: #5c6b7a;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background: var(--blue-soft);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(0, 71, 171, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(242, 169, 59, 0.18), transparent 50%),
+    linear-gradient(180deg, #eef4fc 0%, #f7f9fc 45%, #e8f0fb 100%);
+}
+
+.page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 40px,
+    rgba(0, 71, 171, 0.03) 40px,
+    rgba(0, 71, 171, 0.03) 41px
+  );
+  pointer-events: none;
+}
+
+.wrap {
+  flex: 1;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.brand {
+  display: inline-block;
+  margin-bottom: 2.25rem;
+}
+
+.brand img {
+  display: block;
+  width: min(280px, 72vw);
+  height: auto;
+}
+
+.hero {
+  width: 100%;
+}
+
+.code {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: clamp(5.5rem, 18vw, 8.5rem);
+  line-height: 0.9;
+  color: var(--blue-deep);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 14px 36px rgba(0, 50, 122, 0.22);
+}
+
+.hero h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.65rem, 4.5vw, 2.35rem);
+  color: var(--blue-deep);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.lede {
+  font-size: clamp(1rem, 2.4vw, 1.125rem);
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.site-footer {
+  padding: 1.25rem 1rem 1.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer span {
+  margin: 0 0.45rem;
+  color: #9aa8b5;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding-top: 1.5rem;
+  }
+}
